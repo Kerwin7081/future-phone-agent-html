@@ -6,17 +6,19 @@
   <title>未来手机与个人 Agent 架构</title>
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #667085;
-      --line: #e4e7ec;
-      --accent: #2563eb;
-      --accent-soft: #e8f0ff;
-      --green: #059669;
-      --orange: #d97706;
-      --purple: #7c3aed;
-      --shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+      --bg: #fff1d6;
+      --card: #fffaf0;
+      --text: #1f1a17;
+      --muted: #6f6255;
+      --line: #dfcfae;
+      --accent: #9e2f22;
+      --accent-soft: #f4dfc3;
+      --green: #286955;
+      --orange: #a85f18;
+      --purple: #5f456e;
+      --ink: #111111;
+      --paper: #fff8e8;
+      --shadow: 0 14px 30px rgba(49, 34, 21, 0.08);
     }
 
     * {
@@ -36,6 +38,17 @@
       line-height: 1.68;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(31, 26, 23, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 26, 23, 0.018) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
     .page {
       width: min(1120px, 100%);
       margin: 0 auto;
@@ -43,13 +56,14 @@
     }
 
     .hero {
-      background: #102033;
-      color: #fff;
+      background: var(--ink);
+      color: var(--paper);
       border-radius: 8px;
       padding: clamp(28px, 5vw, 46px);
-      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.22);
+      box-shadow: 0 18px 46px rgba(49, 34, 21, 0.22);
       overflow: hidden;
       position: relative;
+      border: 1px solid #2d2823;
     }
 
     .hero::before {
@@ -59,7 +73,7 @@
       width: 260px;
       height: 260px;
       border-radius: 50%;
-      background: rgba(37, 99, 235, 0.36);
+      background: rgba(158, 47, 34, 0.48);
     }
 
     .eyebrow {
@@ -70,7 +84,7 @@
       padding: 6px 10px;
       border: 1px solid rgba(255, 255, 255, 0.24);
       border-radius: 999px;
-      color: #cfe0ff;
+      color: #f3d7ad;
       font-size: 13px;
       font-weight: 650;
       position: relative;
@@ -97,7 +111,7 @@
     .subtitle {
       max-width: 760px;
       margin: 20px 0 0;
-      color: #dbeafe;
+      color: #f5dfbd;
       font-size: clamp(16px, 2.2vw, 19px);
       position: relative;
       z-index: 1;
@@ -166,14 +180,14 @@
     }
 
     .brand-panel {
-      border: 1px solid rgba(37, 99, 235, 0.22);
+      border: 1px solid rgba(158, 47, 34, 0.22);
       border-radius: 8px;
-      background: #f8fbff;
+      background: #fff5df;
       padding: clamp(16px, 2.4vw, 22px);
     }
 
     .brand-panel strong {
-      color: #0f172a;
+      color: var(--ink);
     }
 
     .brand-kicker {
@@ -189,7 +203,7 @@
 
     .quote {
       margin-bottom: 0;
-      color: #0f172a;
+      color: #1f1a17;
       font-size: clamp(21px, 3.2vw, 28px);
       font-weight: 760;
       line-height: 1.4;
@@ -241,7 +255,7 @@
     .theme {
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #fbfdff;
+      background: #fff6e4;
       padding: 18px;
       min-width: 0;
     }
@@ -273,7 +287,7 @@
       padding: 16px 12px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #f8fafc;
+      background: #fff4dc;
       text-align: center;
       font-weight: 720;
     }
@@ -300,7 +314,7 @@
       width: 100%;
       min-width: 720px;
       border-collapse: collapse;
-      background: #fff;
+      background: #fffaf0;
     }
 
     .compare th,
@@ -312,8 +326,8 @@
     }
 
     .compare th {
-      background: #f1f5f9;
-      color: #344054;
+      background: #f1dfbd;
+      color: #33261d;
       font-size: 14px;
       white-space: nowrap;
     }
@@ -324,7 +338,7 @@
 
     .theme {
       border-left: 5px solid var(--accent);
-      background: #f8fafc;
+      background: #fff4dc;
     }
 
     .theme:nth-child(2) { border-color: var(--green); }
@@ -339,12 +353,12 @@
     }
 
     .disclaimer {
-      border-color: #fed7aa;
-      background: #fff7ed;
+      border-color: #c88f45;
+      background: #f8e5c1;
     }
 
     .disclaimer h2 {
-      color: #9a3412;
+      color: var(--accent);
     }
 
     .footer {
@@ -414,7 +428,7 @@
         display: block;
         padding: 8px 12px;
         color: var(--muted);
-        background: #f8fafc;
+        background: #f6e5c5;
         border-top: 1px solid var(--line);
         font-size: 12px;
       }
@@ -443,7 +457,7 @@
     <section class="grid">
       <div class="card span-8">
         <span class="pill">核心判断</span>
-        <p class="quote">手机不会完全取代 PC 或云服务器。更现实的路径，是手机成为个人 Agent 的入口，云端成为执行后台，PC 成为开发工作站。</p>
+        <p class="quote">手机不会完全取代 PC 或云服务器。更现实的路径，是手机成为个人 Agent 的入口，云端成为执行后台，PC 成为开发工作站。因此，手机端 Agent 的展开及普及，意味着手机芯片及存储的适配及大幅增量。</p>
       </div>
 
       <div class="card span-4">
@@ -583,13 +597,15 @@
       </div>
 
       <div class="card span-12 disclaimer">
-        <h2>出品与风险提示</h2>
-        <p><strong>Kerwin 团队出品：</strong>本文由 Kerwin 确定研究主题及校对逻辑，由 OpenClaw 打造的 Enya 自动化编码与发布。</p>
-        <p><strong>投资边界：</strong>本文不构成严谨投资建议；严谨投资建议请与 Kerwin 联系。</p>
+        <h2>出品说明与流转方式</h2>
+        <p><strong>本文由 Kerwin 团队自动化呈现：</strong>Kerwin 确定研究主题、判断框架与校对逻辑；OpenClaw 打造的 Enya 完成页面结构、视觉排版、移动端适配、GitHub Pages 发布与 Telegram 交付。</p>
+        <p><strong>技术底座：</strong>底层 AI 模型采用 GPT-5.5 及 Claude 付费版；Enya 是香港首个由 OpenClaw 打造的女性投顾 Agent，负责把研究内容转化为可阅读、可发布、可传播的网页版本。</p>
+        <p><strong>公开流转：</strong>GitHub 生成公开可流转的网页链接，便于在 Telegram、微信、邮件和客户沟通场景中直接分享。</p>
+        <p><strong>风险提示：</strong>本文不构成严谨投资建议；严谨投资建议请与 Kerwin 联系。</p>
       </div>
     </section>
 
-    <div class="footer">Kerwin Team x OpenClaw Enya：自动化研究、编码、发布与 Telegram 交付</div>
+    <div class="footer">Kerwin Team x OpenClaw Enya：从研究主题到公开网页链接，再到 Telegram 流转交付</div>
   </main>
 </body>
 </html>
