@@ -24,6 +24,29 @@ python .\publisher.py
 
 On a VPS, run it with systemd, pm2, Docker, or your OpenClaw Gateway process supervisor.
 
+## DigitalOcean systemd Deployment
+
+Copy this folder to the droplet, then run:
+
+```bash
+sudo bash deploy_digitalocean.sh
+sudo nano /opt/telegram-html-publisher/.env
+sudo systemctl restart telegram-html-publisher
+sudo journalctl -u telegram-html-publisher -f
+```
+
+The service file is installed at:
+
+```text
+/etc/systemd/system/telegram-html-publisher.service
+```
+
+The runtime environment file is:
+
+```text
+/opt/telegram-html-publisher/.env
+```
+
 ## Telegram Usage
 
 Send one message containing a full HTML document:
