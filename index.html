@@ -157,6 +157,36 @@
       font-weight: 700;
     }
 
+    .brand-strip {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 16px;
+    }
+
+    .brand-panel {
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      border-radius: 8px;
+      background: #f8fbff;
+      padding: clamp(16px, 2.4vw, 22px);
+    }
+
+    .brand-panel strong {
+      color: #0f172a;
+    }
+
+    .brand-kicker {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .brand-panel p:last-child {
+      margin-bottom: 0;
+    }
+
     .quote {
       margin-bottom: 0;
       color: #0f172a;
@@ -303,8 +333,18 @@
 
     .route p:last-child,
     .theme p:last-child,
-    .node p:last-child {
+    .node p:last-child,
+    .disclaimer p:last-child {
       margin-bottom: 0;
+    }
+
+    .disclaimer {
+      border-color: #fed7aa;
+      background: #fff7ed;
+    }
+
+    .disclaimer h2 {
+      color: #9a3412;
     }
 
     .footer {
@@ -329,6 +369,10 @@
 
       .flow {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .brand-strip {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -383,6 +427,17 @@
       <div class="eyebrow">Future Phone x Personal Agent OS</div>
       <h1>未来手机不会只是 App 入口，而会成为个人 Agent 的随身控制台</h1>
       <p class="subtitle">手机负责感知、交互与确认；PC 负责开发和复杂文件处理；云服务器负责长期在线、任务调度、Python 执行和自动化输出。</p>
+    </section>
+
+    <section class="brand-strip" aria-label="Kerwin 出品说明">
+      <div class="brand-panel">
+        <div class="brand-kicker">KERWIN TEAM PRESENTS</div>
+        <p><strong>本文由 Kerwin 团队自动化呈现：</strong>Kerwin 确定研究主题及校对逻辑，OpenClaw 打造的 Enya 全程自动化编码实现。</p>
+      </div>
+      <div class="brand-panel">
+        <div class="brand-kicker">ENYA AGENT STACK</div>
+        <p><strong>底层 AI 模型：</strong>GPT-5.5 及 Claude 付费版。<br><strong>Enya：</strong>香港首个由 OpenClaw 打造的女性投顾 Agent。</p>
+      </div>
     </section>
 
     <section class="grid">
@@ -526,9 +581,15 @@
         <p><strong>PC 端：</strong>Codex / Claude Code / VS Code / Python，用作代码开发、脚本维护和复杂文件处理工作站。</p>
         <p><strong>ChatGPT：</strong>承担研究推理、文章生成、框架设计和投顾表达。</p>
       </div>
+
+      <div class="card span-12 disclaimer">
+        <h2>出品与风险提示</h2>
+        <p><strong>Kerwin 团队出品：</strong>本文由 Kerwin 确定研究主题及校对逻辑，由 OpenClaw 打造的 Enya 自动化编码与发布。</p>
+        <p><strong>投资边界：</strong>本文不构成严谨投资建议；严谨投资建议请与 Kerwin 联系。</p>
+      </div>
     </section>
 
-    <div class="footer">Future Phone x Personal Agent OS：手机是入口，云端是后台，PC 是工作站</div>
+    <div class="footer">Kerwin Team x OpenClaw Enya：自动化研究、编码、发布与 Telegram 交付</div>
   </main>
 </body>
 </html>
