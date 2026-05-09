@@ -137,7 +137,13 @@
       position: sticky;
       top: 0;
     }
-    .table-wrap { overflow-x: auto; border: 1px solid var(--ft-line); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--ft-line); -webkit-overflow-scrolling: touch; }
+    .table-note {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: var(--ft-muted);
+      margin: 0 0 10px;
+    }
     .up { color: var(--ft-up); font-weight: 700; }
     .down { color: var(--ft-down); font-weight: 700; }
     .flat { color: #8a7a70; font-weight: 700; }
@@ -174,6 +180,20 @@
       .meta-list, .big-number { grid-template-columns: 1fr; }
       .wrap { padding: 18px 12px 40px; }
       .card, .story { padding: 16px; }
+      .subdeck { font-size: 17px; }
+    }
+    @media (max-width: 640px) {
+      body { line-height: 1.55; }
+      h1 { font-size: 34px; }
+      .kicker, .badge, .label, th { letter-spacing: .03em; }
+      .subdeck { font-size: 16px; }
+      .lede { font-size: 16px; }
+      .byline, .footer, .meta-list, table { font-size: 13px; }
+      .section-title { font-size: 20px; }
+      .tile strong { font-size: 26px; }
+      th, td { padding: 8px 7px; font-size: 12px; }
+      th:first-child, td:first-child { position: sticky; left: 0; background: #fff; }
+      thead th:first-child { background: #fcf4ed; z-index: 1; }
     }
   </style>
 </head>
@@ -224,6 +244,7 @@
 
     <section class="card" style="margin-top:24px;">
       <h2 class="section-title">组合标的表现</h2>
+      <p class="table-note">手机端可左右滑动表格；首列已固定，便于快速查看标的。</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -295,6 +316,7 @@
     <section class="two-col">
       <div class="card">
         <h2 class="section-title">指数表现</h2>
+        <p class="table-note">指数表同样支持手机端横向滑动。</p>
         <div class="table-wrap">
           <table>
             <thead>
